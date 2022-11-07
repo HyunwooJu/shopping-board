@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div class="container">
+    <!--    <div th:replace="fragments/bodyHeader :: bodyHeader"/>-->
+    <div class="jumbotron">
+        <h1>MyProtein</h1>
+        <p class="lead" style="font-size:30px;color: aqua">Login</p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/joinForm">회원가입</a>
+            <a class="btn btn-lg btn-secondary" href="/loginForm">로그인</a>
+        </p>
+    </div>
+    <div>
+        <h1>상품등록</h1>
+        <p>
+            <a href="/admin/product/new">상품등록</a>
+        </p>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
+

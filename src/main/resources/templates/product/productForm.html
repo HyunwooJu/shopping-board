@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품등록</title>
+    <style>
+        .field-error{
+            color: red;
+        }
+    </style>
+</head>
+<div>
+    <form role="form" method="post" th:object="${productSaveForm}">
+        <p class="h2">
+            상품 등록
+        </p>
+
+        <div th:if="${#fields.hasGlobalErrors()}">
+            <p class="field-error" th:each="err : ${#fields.globalErrors()}"
+            th:text="${err}">전체 오류 메세지</p>
+        </div>
+        <div>
+            <div>상품 현황</div>
+            <select th:field="*{productSellStatus}" class="custom-select">
+                <option value="SELL">판매중</option>
+                <option value="SOLD_OUT">품절</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">상품명</span>
+            </div>
+            <input type="text" th:field="*{product_name}" class="form-control" placeholder="상품명을 입력해주세요">
+        </div>
+        <p th:if="${#fields.hasErrors('product_name')}" th:errors="*{product_name}" class="fieldError">Incorrect
+            data</p>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">가격</span>
+            </div>
+            <input type="number" th:field="*{product_price}" class="form-control" placeholder="상품의 가격을 입력해주세요">
+        </div>
+        <p th:if="${#fields.hasErrors('product_price')}" th:errors="*{product_price}" class="fieldError">Incorrect
+            data</p>
+
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">재고</span>
+            </div>
+            <input type="number" th:field="*{product_stock}" class="form-control" placeholder="상품의 재고를 입력해주세요">
+        </div>
+        <p th:if="${#fields.hasErrors('product_stock')}" th:errors="*{product_stock}" class="fieldError">Incorrect
+            data</p>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">상품 상세 내용</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" th:field="*{product_detail}"></textarea>
+        </div>
+        <p th:if="${#fields.hasErrors('product_detail')}" th:errors="*{product_detail}" class="fieldError">Incorrect
+            data</p>
+        <button type="submit">등록하기</button>
+        <button type="reset">다시 등록</button>
+    </form>
+</div>
+</html>
