@@ -1,18 +1,19 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hello</title>
+    <title>Workout</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <div class="container">
     <!--    <div th:replace="fragments/bodyHeader :: bodyHeader"/>-->
     <div class="jumbotron">
-        <h1>MyProtein</h1>
-        <p class="lead" style="font-size:30px;color: aqua">Login</p>
-        <p>
-            <a class="btn btn-lg btn-secondary" href="/joinForm">회원가입</a>
-            <a class="btn btn-lg btn-secondary" href="/loginForm">로그인</a>
+        <h1 class="display-4" style="text-align: center">Work Out !</h1>
+        <hr class="my-4">
+        <p class="lead" style="font-size:30px;color: aqua">Login page</p>
+        <p class="read">
+            <button type="submit" class="btn btn-primary" onclick="location.href='/joinForm'">회원가입</button>
+            <button type="submit" class="btn btn-primary" onclick="location.href='/loginForm'">로그인</button>
         </p>
     </div>
     <div>
@@ -24,4 +25,3 @@
 </div> <!-- /container -->
 </body>
 </html>
-

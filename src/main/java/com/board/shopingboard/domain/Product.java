@@ -23,6 +23,8 @@ public class Product {
     private Long product_stock;
     private String product_detail;
 
+    public class product{}
+
     @Enumerated(EnumType.STRING)
     private ProductSellStatus productSellStatus;
 
