@@ -1,11 +1,14 @@
 package com.board.shopingboard.domain;
 
 import com.board.shopingboard.controller.form.ProductSaveForm;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter
@@ -32,6 +35,9 @@ public class Product {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "product")
+    private List<Product_Basket> product_baskets = new ArrayList<>();
 
     public Product(ProductSaveForm form, Member chkByUserId) {
         this.product_name = form.getProduct_name();
