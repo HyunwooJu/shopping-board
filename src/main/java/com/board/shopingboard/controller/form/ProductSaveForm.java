@@ -24,5 +24,4 @@ public class ProductSaveForm {
     private Long product_stock;
 
     private ProductSellStatus productSellStatus;
-
 }

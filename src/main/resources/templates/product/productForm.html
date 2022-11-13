@@ -8,20 +8,21 @@
     <meta charset="UTF-8">
     <title>상품등록</title>
     <style>
-        .field-error{
+        .field-error {
             color: red;
         }
     </style>
 </head>
+<body>
 <div>
-    <form role="form" method="post" th:object="${productSaveForm}">
+    <form role="form" method="post" th:object="${productSaveForm}" enctype="multipart/form-data">
         <p class="h2">
             상품 등록
         </p>
 
         <div th:if="${#fields.hasGlobalErrors()}">
             <p class="field-error" th:each="err : ${#fields.globalErrors()}"
-            th:text="${err}">전체 오류 메세지</p>
+               th:text="${err}">전체 오류 메세지</p>
         </div>
         <div>
             <div>상품 현황</div>
@@ -67,8 +68,16 @@
         </div>
         <p th:if="${#fields.hasErrors('product_detail')}" th:errors="*{product_detail}" class="fieldError">Incorrect
             data</p>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">상품 이미지</span>
+            </div>
+            <input type="file" id="productImage" name="productImage" class="form-control" placeholder="상품의 이미지를 등록하세요"></input>
+        </div>
         <button type="submit">등록하기</button>
         <button type="reset">다시 등록</button>
     </form>
 </div>
+</body>
 </html>

@@ -26,7 +26,15 @@ public class Product {
     private Long product_stock;
     private String product_detail;
 
-    public class product{}
+    //Multipart
+    private String imgName; //이미지 파일명
+
+    private String imgPath; //이미지 조회 경로
+
+    private byte[] imgByte;
+
+    public class product {
+    }
 
     @Enumerated(EnumType.STRING)
     private ProductSellStatus productSellStatus;
@@ -37,15 +45,17 @@ public class Product {
 
     @JsonIgnore
     @OneToMany(mappedBy = "product")
-    private List<Product_Basket> product_baskets = new ArrayList<>();
+    private List<Product_Cart> product_carts = new ArrayList<>();
 
-    public Product(ProductSaveForm form, Member chkByUserId) {
+    public Product(ProductSaveForm form, Member chkByUserId, String imgName) {
         this.product_name = form.getProduct_name();
         this.product_price = form.getProduct_price();
         this.product_stock = form.getProduct_stock();
         this.product_detail = form.getProduct_detail();
         this.productSellStatus = form.getProductSellStatus();
         this.member = chkByUserId;
+        this.imgName = imgName;
+        this.imgPath = imgName;
     }
 
 }

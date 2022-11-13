@@ -31,6 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/loginForm") // /loginForm의 view를 사용한다.
                 .loginProcessingUrl("/login") // /login 주소가 호출이되면 시큐리티가 낚아채서 대신 로그인을 진행해준다.
                 //redirect 하는 방법 html을
-                .defaultSuccessUrl("/");
+                .defaultSuccessUrl("/main");
     }
 }
