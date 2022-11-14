@@ -1,64 +1,200 @@
-<!doctype html>
+<!--<!doctype html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--    <style>-->
+<!--        .multi {-->
+<!--            column-width: 120px;-->
+<!--        }-->
+
+<!--        ul {-->
+<!--            list-style: none;-->
+<!--        }-->
+
+<!--        li {-->
+<!--            margin: 20px;-->
+<!--            float: left;-->
+<!--            text-align: center;-->
+<!--            width: 200px;-->
+<!--        }-->
+
+
+<!--        #category-group {-->
+<!--            column-width: 180px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 1px;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        #product-group {-->
+<!--            float: left;-->
+<!--            margin: 20px;-->
+<!--            background-color: red;-->
+<!--        }-->
+<!--    </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+
+<!--    <div id="category-group">-->
+<!--        <ul>-->
+<!--            <li><a href="/main"> 상품 </a></li>-->
+<!--            <li><a href="/admin/product/new">상품 등록</a></li>-->
+<!--            <li> 유저 소통 게시판</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+
+<!--    <div class="input-group">-->
+<!--        <div id="product-group" th:each="product : ${productAll}">-->
+<!--            <img th:src="${product.getImgPath()}" width="400px" height="400px" alt="등록된 이미지가 없습니다.">-->
+<!--            <p th:text="${product.product_name}">상품명</p>-->
+<!--            <p th:text="${product.product_stock}">수량</p>-->
+<!--            <p th:text="${product.product_price}">가격</p>-->
+<!--            <p th:text="${product.productSellStatus}">상태</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<head>-->
+<!--    <title>Shop</title>-->
+<!--    <meta charset="utf-8">-->
+<!--    <link rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">-->
+
+<!--    <style>-->
+<!--    #product-group {-->
+<!--                float: left;-->
+<!--                margin: 20px;-->
+<!--                background-color: red;-->
+<!--            }-->
+<!--        </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<div class="navbar" style="height: 60px; padding-left: 30px; padding-right: 30px">-->
+<!--    <a href="#" id="logo">-->
+<!--        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbelPXk%2Fbtq3htE0CuW%2F20UUE0cydRQEDvD6wlEL1K%2Fimg.png" height="60">-->
+<!--    </a>-->
+
+<!--    <ul id="menu">-->
+<!--        <li><a href="/main"><b>상품</b></a></li>-->
+<!--        <li><a href="/admin/product/new"><b>상품 등록</b></a></li>-->
+<!--        <li><a href="#"><b>소통 게시판</b></a></li>-->
+<!--        <li><a href="auth/loginForm.html"><b>Login</b></a></li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+<!--<div class="hero-header"></div>-->
+<!--<div class="input-group">-->
+<!--            <div id="product-group" th:each="product : ${productAll}">-->
+<!--                <img th:src="${product.getImgPath()}" width="400px" height="400px" alt="등록된 이미지가 없습니다.">-->
+<!--                <p th:text="${product.product_name}">상품명</p>-->
+<!--                <p th:text="${product.product_stock}">수량</p>-->
+<!--                <p th:text="${product.product_price}">가격</p>-->
+<!--                <p th:text="${product.productSellStatus}">상태</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--</body>-->
+
+
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .multi {
-            column-width: 120px;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin: 20px;
-            float: left;
-            text-align: center;
-            width: 200px;
-        }
-
-
-        #category-group {
-            column-width: 180px;
-            margin: 0 auto;
-            padding: 1px;
-            text-align: center;
-        }
-
-        #product-group {
-            float: left;
-            margin: 20px;
-            background-color: red;
-        }
-    </style>
-
+    <title>Shop</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/shopcss.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 </head>
 <body>
-<div>
+<div class="navbar">
+    <a href="#" id="logo">
+        <img src="logo.png" alt="logo"
+             width="163" height="165">
+    </a>
 
-    <div id="category-group">
-        <ul>
-            <li><a href="/main"> 상품 </a></li>
-            <li><a href="/admin/product/new">상품 등록</a></li>
-            <li> 유저 소통 게시판</li>
-        </ul>
-    </div>
+    <ul id="menu">
+        <li><a href="/main"><b>상품</b></a></li>
+        <li><a href="/admin/product/new"><b>상품등록</b></a></li>
+        <li><a href="#"><b>장바구니</b></a></li>
+        <li><a href="auth/loginForm.html"><b>로그인</b></a></li>
+    </ul>
+</div>
+
+<div class="hero-header"></div>
 
 
-    <div class="input-group">
-        <div id="product-group" th:each="product : ${productAll}">
-            <img th:src="${product.getImgPath()}" width="400px" height="400px" alt="등록된 이미지가 없습니다.">
-            <p th:text="${product.product_name}">상품명</p>
-            <p th:text="${product.product_stock}">수량</p>
-            <p th:text="${product.product_price}">가격</p>
-            <p th:text="${product.productSellStatus}">상태</p>
+<div class="products">
+    <h3>Our New Products</h3>
+
+    <div class="product-list">
+        <a href="#" class="product">
+            <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225">
+            <div class="product-name">
+                Sunglasses
+            </div>
+            <div class="product-price">
+                49,000
+            </div>
+        </a>
+
+
+        <a href="#" class="product">
+            <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
+            <div class="product-name">
+                Sunglasses
+            </div>
+            <div class="product-price">
+                49,000
+            </div>
+        </a>
+
+
+        <a href="#" class="product">
+            <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" width="225" height="225px">
+            <div class="product-name">
+                Sunglasses
+            </div>
+            <div class="product-price">
+                49,000
+            </div>
+        </a>
+
+
+        <div class="input-group,product">
+            <div id="product-group" th:each="product : ${productAll}">
+                <img th:src="${product.getImgPath()}" width="225px" height="225px" alt="등록된 이미지가 없습니다.">
+                <p th:text="${product.product_name}">상품명</p>
+                <p th:text="${product.product_stock}">수량</p>
+                <p th:text="${product.product_price}">가격</p>
+                <p th:text="${product.productSellStatus}">상태</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="footer">
+            <a href="http://faceboo.com">
+                <img src="https://bakey-api.codeit.kr/files/629/images/facebook.png" height="20">
+            </a>
+            <a href="http://faceboo.com">
+                <img src="https://bakey-api.codeit.kr/files/629/images/instagram.png" height="20">
+            </a>
+            <a href="http://faceboo.com">
+                <img src="https://bakey-api.codeit.kr/files/629/images/twitter.png" height="20">
+            </a>
         </div>
     </div>
-</div>
 </body>
 </html>
