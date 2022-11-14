@@ -34,6 +34,9 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Product> products = new ArrayList<>();
 
+    @OneToMany(mappedBy = "member")
+    private List<Product_Cart> product_carts = new ArrayList<>();
+
 
     public Member(MemberSaveForm form) {
         this.username = form.getUsername();

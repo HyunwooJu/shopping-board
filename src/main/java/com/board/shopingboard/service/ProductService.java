@@ -30,9 +30,8 @@ public class ProductService {
         String oriImgName = productImage.getOriginalFilename();
         String imgName = "";
 
-//        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/image/";
-        /*String projectPath = "C:/Users/HOME/Desktop/spring_img/"; // 데스크탑일때*/
-        String projectPath = "C:/Users/soc05/Desktop/spring_img/"; // 노트북일때
+        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/image/";
+//        String projectPath = "C:/Users/soc05/Desktop/spring_img/"; // 노트북일때
         UUID uuid = UUID.randomUUID();
 
         imgName = uuid + "_" + oriImgName; //파일명 -> imageName

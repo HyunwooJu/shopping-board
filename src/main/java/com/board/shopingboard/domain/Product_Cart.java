@@ -23,8 +23,17 @@ public class Product_Cart {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
-    private Long Product_Cart_Stock;
 
+    private Long productCartStock;
+
+    public Product_Cart(Product product, Long productCartStock, Member member) {
+        this.productCartStock = productCartStock;
+        this.product = product;
+        this.member=member;
+    }
 
 }

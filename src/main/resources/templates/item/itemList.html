@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<meta charset="UTF-8">
+<title>장바구니 리스트</title>
+</head>
+<body>
+<div>
+    <div>장바구니 목록</div>
+    <table class="table table-striped" border="1">
+        <thead>
+        <tr>
+            <th>이미지</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>개수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${itemCartListAll}">
+            <td><img width="60px" height="60px" th:src="${item.getProduct().imgPath}" alt="상품이미지"></td>
+            <td th:text="${item.getProduct().product_name}">상품명</td>
+            <td th:text="${item.getProduct().product_price}">가격</td>
+            <td th:text="${item.productCartStock}">개수</td>
+        </tr>
+        </tbody>
+    </table>
+    <div><span>총 금액 : </span> <span th:text="${productTotalPay}">총금액</span><span>원</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<meta charset="UTF-8">
+<title>상품상세정보</title>
+</head>
+<body>
+<div>
+    <div th:object="${findByProduct}">
+        <img th:src="${findByProduct.imgPath}" width="225" alt="등록된 사진입니다.">
+        <div class="product-name">
+            <div th:text="${findByProduct.product_name}">상품명</div>
+        </div>
+        <div class="product-price">
+            <div th:text="${findByProduct.product_price}">가격</div>
+        </div>
+        <div class="product-status">
+            <div th:text="${findByProduct.product_stock}">수량</div>
+        </div>
+        <div class="product-status">
+            <div th:text="${findByProduct.product_detail}">상품상세정보</div>
+        </div>
+    </div>
+
+    <form th:action="|@{/itemCart/add?itemId={id} (id=${findByProduct.id})}|" th:method="post">
+        <div>
+            <input type="number" th:field="${itemSaveForm.productCartStock}" placeholder="주문할 수량을 입력해주세요."/>
+        </div>
+        <button type="submit" class="btn btn-primary">장바구니 담기</button>
+    </form>
+</div>
+</body>
+</html>

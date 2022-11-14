@@ -24,4 +24,12 @@ public class ProductSaveForm {
     private Long product_stock;
 
     private ProductSellStatus productSellStatus;
+
+    public ProductSaveForm(String product_name, Long product_price, String product_detail, Long product_stock, ProductSellStatus productSellStatus) {
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_detail = product_detail;
+        this.product_stock = product_stock;
+        this.productSellStatus = productSellStatus;
+    }
 }
