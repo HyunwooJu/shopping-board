@@ -23,6 +23,7 @@ public class Product_Cart {
     @JoinColumn(name = "product_id")
     private Product product;
 
+
     private Long Product_Cart_Stock;
 
 

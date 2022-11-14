@@ -37,7 +37,7 @@ public class MemberService {
         Optional<Member> findUserId = memberRepository.findByUserId(form.getUserId());
 
         if (!form.getPasswdchk().equals(form.getPassword())) {
-            throw new IllegalStateException("페스워드가 동일하지 않습니다.");
+            throw new IllegalStateException("패스워드가 동일하지 않습니다.");
         }
         if (!findUserId.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원입니다"); //프론트
