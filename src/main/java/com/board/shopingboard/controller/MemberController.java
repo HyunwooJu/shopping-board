@@ -23,23 +23,23 @@ public class MemberController {
     @GetMapping("/joinForm")
     public String joinForm(Model model) {
         model.addAttribute("memberForm", new MemberSaveForm());
-        return "/auth/joinForm";
+        return "auth/joinForm";
     }
 
     @PostMapping("/join")
     public String join(@Valid MemberSaveForm form, BindingResult result) {
 
         if (result.hasErrors()) {
-            return "/auth/joinForm";
+            return "auth/joinForm";
         }
 
         memberService.join(form);
-        return "/auth/loginForm";
+        return "auth/loginForm";
     }
 
     @GetMapping("/loginForm")
     public String loginForm() {
-        return "/auth/loginForm";
+        return "auth/loginForm";
     }
 
     @Secured("ROLE_ADMIN")

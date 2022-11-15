@@ -21,7 +21,7 @@ public class MemberSaveForm {
     private String password;
 
     @NotEmpty(message = "정보를 입력해주세요")
-    private String passwdchk;
+    private String passwdChk;
 
     //주소 정보
     @NotEmpty(message = "정보를 입력해주세요")

@@ -36,7 +36,7 @@ public class MemberService {
 
         Optional<Member> findUserId = memberRepository.findByUserId(form.getUserId());
 
-        if (!form.getPasswdchk().equals(form.getPassword())) {
+        if (!form.getPasswdChk().equals(form.getPassword())) {
             throw new IllegalStateException("패스워드가 동일하지 않습니다.");
         }
         if (!findUserId.isEmpty()) {

@@ -6,8 +6,8 @@
 }
 
 .hero-header{
-    height: 450px;
-    background-image: url("https://post.healthline.com/wp-content/uploads/2020/02/man-exercising-plank-push-up-1296x728-header-1296x728.jpg");
+    height: 600px;
+    background-image: url("https://barbend.com/wp-content/uploads/2022/01/Chris-Bumstead-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -19,7 +19,7 @@
 
 .navbar img{
     vertical-align: top;
-    border: blanchedalmond 5px solid;
+    border: black 5px solid;
 }
 
 .navbar #menu{

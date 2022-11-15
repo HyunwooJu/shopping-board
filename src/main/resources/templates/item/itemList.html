@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         <tr th:each="item : ${itemCartListAll}">
-            <td><img width="60px" height="60px" th:src="${item.getProduct().imgPath}" alt="상품이미지"></td>
+            <td><img width="225px" height="225px" th:src="${item.getProduct().imgPath}" alt="상품이미지"></td>
             <td th:text="${item.getProduct().product_name}">상품명</td>
             <td th:text="${item.getProduct().product_price}">가격</td>
             <td th:text="${item.productCartStock}">개수</td>
@@ -26,6 +26,8 @@
         </tbody>
     </table>
     <div><span>총 금액 : </span> <span th:text="${productTotalPay}">총금액</span><span>원</span></div>
+    <div style="bu:"></div>
+    <button type="submit" class="btn btn-primary" onclick="location.href='/orders'">결제하기</button>
 </div>
 </body>
 </html>

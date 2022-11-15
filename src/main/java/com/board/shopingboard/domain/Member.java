@@ -19,7 +19,7 @@ public class Member {
 
     @Id
     @GeneratedValue
-    @Column(name="member_id")
+    @Column(name = "member_id")
     private Long id; //DB id
 
     private String userId; //유저 아이디
@@ -37,6 +37,13 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Product_Cart> product_carts = new ArrayList<>();
 
+    /**
+     * Member => Order
+     * Member는 order에게 member의 정보를 던져줌
+     * mappedBy = "member" ==> order의 member와 영속성을 지니고 있음.
+     */
+    @OneToOne(mappedBy = "member")
+    private Order order;
 
     public Member(MemberSaveForm form) {
         this.username = form.getUsername();
@@ -50,4 +57,5 @@ public class Member {
         this.password = password;
         this.role = role;
     }
+
 }
