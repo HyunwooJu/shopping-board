@@ -49,13 +49,15 @@ public class Member {
         this.username = form.getUsername();
         this.userId = form.getUserId();
         this.password = form.getPassword();
+        this.address = form.getAddress();
     }
 
-    public Member(String username, String userId, String password, String role) {
+    public Member(String username, String userId, String password, String role, String address) {
         this.username = username;
         this.userId = userId;
         this.password = password;
         this.role = role;
+        this.address = address;
     }
 
 }

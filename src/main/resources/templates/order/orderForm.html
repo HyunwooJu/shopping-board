@@ -2,9 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header"/>
 <meta charset="UTF-8">
-<title>상품 결제</title>
+<title>장바구니 리스트</title>
 </head>
 <body>
+<div>
+    <div>결제 목록</div>
+    <table class="table table-striped" border="1">
+        <thead>
+        <tr>
+            <th>이미지</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>개수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="productCartItem : ${findAllProductCart}">
+            <td><img width="225px" height="225px" th:src="${productCartItem.getProduct().imgPath}" alt="상품이미지"></td>
+            <td th:text="${productCartItem.getProduct().getProduct_name()}">상품명</td>
+            <td th:text="${productCartItem.getProduct().getProduct_price()}">가격</td>
+            <td th:text="${productCartItem.getProduct().getProduct_stock()}">개수</td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:object="${findMember}">
+        <div th:text="${findMember.username}">유저명</div>
+        <div th:text="${findMember.address}">유저의 주소</div>
+    </div>
 
+    <button class="btn btn-primary" id="my-button"> 버튼</button>
+
+</div>
 </body>
+<script>
+    document.getElementById("my-button").onclick = function () {
+        alert("결제되었습니다.");
+        location.href = '/main';
+    };
+</script>
 </html>
