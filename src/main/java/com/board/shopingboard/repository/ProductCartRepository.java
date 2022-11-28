@@ -9,4 +9,5 @@ import java.util.List;
 public interface ProductCartRepository extends JpaRepository<Product_Cart, Long> {
 
     public List<Product_Cart> findByMemberId(Long memberId);
+    public Product_Cart findChkByMemberId(Long memberId);
 }

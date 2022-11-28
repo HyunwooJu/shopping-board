@@ -31,8 +31,6 @@ public class Product {
 
     private String imgPath; //이미지 조회 경로
 
-    private byte[] imgByte;
-
     public class product {
     }
 

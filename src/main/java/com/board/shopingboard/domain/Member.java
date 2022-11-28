@@ -28,6 +28,9 @@ public class Member {
 
     private String address; //유저 주소
 
+    private Long user_point; //유저 포인트
+
+
     private String role; //ROLE_USER, ROLE_ADMIN
 
     @JsonIgnore
@@ -50,14 +53,16 @@ public class Member {
         this.userId = form.getUserId();
         this.password = form.getPassword();
         this.address = form.getAddress();
+        this.user_point = 0L;
     }
 
-    public Member(String username, String userId, String password, String role, String address) {
+    public Member(String username, String userId, String password, String role, String address, Long user_point) {
         this.username = username;
         this.userId = userId;
         this.password = password;
         this.role = role;
         this.address = address;
+        this.user_point = user_point;
     }
 
 }

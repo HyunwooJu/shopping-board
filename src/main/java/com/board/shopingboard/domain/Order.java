@@ -25,7 +25,6 @@ public class Order {
     @JsonIgnore
     private List<Product_Cart> product_carts = new ArrayList<>();
 
-
     /**
      * Order => Member
      * Order에 불러온 Member의 id값을 정의 할 때 order_member_id로 정의할 것이며
@@ -35,4 +34,7 @@ public class Order {
     @JoinColumn(name = "order_member_id")
     private Member member;
 
+    public Order(Member member) {
+        this.member = member;
+    }
 }

@@ -43,8 +43,6 @@ public class ItemService {
 
     public List<Product_Cart> itemList() {
         List<Product_Cart> itemAll = productCartRepository.findAll();
-
-
         return itemAll;
     }
 

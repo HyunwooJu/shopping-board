@@ -33,8 +33,8 @@ public class initDB {
         private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
         public void dbInit1() {
-            Member admin = new Member("관리자", "admin", bCryptPasswordEncoder.encode("admin"), "ROLE_ADMIN", "인천");
-            Member test = new Member("test", "test", bCryptPasswordEncoder.encode("test"), "ROLE_USER", "서울");
+            Member admin = new Member("관리자", "admin", bCryptPasswordEncoder.encode("admin"), "ROLE_ADMIN", "인천", 0L);
+            Member test = new Member("test", "test", bCryptPasswordEncoder.encode("test"), "ROLE_USER", "서울", 0L);
             ProductSaveForm productSaveForm1 = new ProductSaveForm("프로틴", 11111L, "프로틴 입니다", 999999L, ProductSellStatus.SELL);
             ProductSaveForm productSaveForm2 = new ProductSaveForm("반팔티", 22222L, "반팔티 입니다.", 999999L, ProductSellStatus.SELL);
             ProductSaveForm productSaveForm3 = new ProductSaveForm("단백질 바", 10000L, "프로틴 바 입니다.", 999999L, ProductSellStatus.SELL);

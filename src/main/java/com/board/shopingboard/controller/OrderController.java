@@ -11,6 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -35,6 +36,12 @@ public class OrderController {
         model.addAttribute("findMember", findMember);
 
         return "order/orderForm";
+    }
+
+    @PostMapping("/orders")
+    public String orderSave(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+        orderService.joinOrder(principalDetails.getUsername());
+        return "redirect:/main";
     }
 
 }

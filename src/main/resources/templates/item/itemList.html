@@ -3,6 +3,11 @@
 <head th:replace="fragments/header :: header"/>
 <meta charset="UTF-8">
 <title>장바구니 리스트</title>
+<style>
+    #productTotalPay {
+        color: red;
+    }
+</style>
 </head>
 <body>
 <div>
@@ -25,7 +30,7 @@
         </tr>
         </tbody>
     </table>
-    <div><span>총 금액 : </span> <span th:text="${productTotalPay}">총금액</span><span>원</span></div>
+    <div><span>총 금액 : </span> <span id="productTotalPay" th:text="${productTotalPay}">총금액</span><span>원</span></div>
     <button type="submit" class="btn btn-primary" onclick="location.href='/orders'">결제하기</button>
 </div>
 </body>
